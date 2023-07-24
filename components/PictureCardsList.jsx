@@ -29,17 +29,11 @@ const PictureCardsList = (props)=>{
     
       return <div className="main-container my-4 content-center snap-center self-center" key={index} >
 
-      <Image 
-      className="card rounded-md"
-      blurDataURL=""
-      loader={({src})=>{
-        return src
-      }}
+      <img 
+      className="card rounded-md h-auto w-72"
         src= {img}
         alt="lol"
-        width={300}
-        height={300}
-
+        
       />
 
       <div className="flex flex-row justify-center space-x-14 bg-slate-500 py-3 my-1 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10">
