@@ -12,22 +12,12 @@ const PictureCardsList = (props)=>{
     return selected;
   }
   const handleDownload = (id)=>{
-    const data = getIMG(id)[0]
-    fetch(`../images/${data.url}`)
-      .then((response) => response.blob())
-      .then((blob) => {
-        // Use file-saver to save the blob as a file with a custom filename
-        saveAs(blob, `${data.url}`); // Customize the downloaded filename here
-      })
-      .catch((error) => {
-        console.error('Error downloading the image:', error);
-        // Add error handling here if necessary
-      });
+
   }
     const {data} = props;
-    console.log(data);
+
     if(!data){
-      return <div>loading....</div>
+      return <div className="main-container my-4 flex content-center snap-center self-center p-8">loading....</div>
     }
     return <>
     <Header/>
@@ -37,21 +27,25 @@ const PictureCardsList = (props)=>{
 
       try{
     
-      return <div className="main-container my-4 content-center snap-center self-center" key={img.id} >
+      return <div className="main-container my-4 content-center snap-center self-center" key={index} >
 
       <Image 
       className="card rounded-md"
-        src= {require(`../images/${img.url}`)}
+      blurDataURL=""
+      loader={({src})=>{
+        return src
+      }}
+        src= {img}
         alt="lol"
         width={300}
-        placeholder="blur"
+        height={300}
+
       />
+
       <div className="flex flex-row justify-center space-x-14 bg-slate-500 py-3 my-1 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10">
         <button className="btn rounded-sm font-sans    px-2 py-1"><AiOutlineHeart/> </button>
       
-        <button onClick={()=>{
-          handleDownload(img.id);
-        }} className="btn rounded-sm font-sans   px-2 py-1 ">
+        <button  className="btn rounded-sm font-sans   px-2 py-1 ">
         <AiOutlineDownload/>
          </button>
 

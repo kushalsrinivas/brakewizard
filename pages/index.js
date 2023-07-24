@@ -1,23 +1,19 @@
 import { useEffect, useState } from "react";
-import Image from "next/image";
-import path from 'path';
-import fs from 'fs/promises';
+import { GetImages } from "@/api_util/apiutil";
 import PictureCardsList from "@/components/PictureCardsList";
+import {storage} from  '../firebase/firebase';
+import {ref , uploadBytes, listAll , getDownloadURL} from 'firebase/storage';
+import { v4 } from "uuid";
+
 
 const  Home = (props)=>{
-  const [name, setName] = useState()
-  const {data} = props;
-
+  const [data, setData]= useState([])
   useEffect(()=>{
-    fetch('api/imageList')
-    .then(res => res.json())
-    .then(data => {
-      console.log(data)
+    GetImages().then((urls)=> {
+      setData(urls)
+
     })
-
-  }
-    ,[])
-
+  }, [])
 
   return(<>
  <div>
@@ -28,16 +24,3 @@ const  Home = (props)=>{
 export default Home;
 
 
-
-export async function getStaticProps(context){
-  const pathtofile = path.join(process.cwd(),'store', 'data.json');
-  const data  = await fs.readFile(pathtofile)
-  const jsonData  =   JSON.parse(data);
-  return {
-    props:{
-      data : jsonData
-    },
-    revalidate :10
-  }
-
-}
