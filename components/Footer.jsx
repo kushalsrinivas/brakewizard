@@ -15,11 +15,11 @@ const Footer = () => {
       </a>
 
       <div>
-        <h6 className="text-xs">
+        <h6 className="text-xs text-white">
           {" "}
           Made with &lt;3 by{" "}
           <a href="https://github.com/kushalsrinivas" target="__blank">
-            <h6 className="underline hover:text-pink-600">Kushal</h6>
+            <h6 className="underline hover:text-pink-600 text-white">Kushal</h6>
           </a>
         </h6>
       </div>
