@@ -27,8 +27,6 @@ const Home = (props) => {
     GETIMGS();
   }, []);
 
-
-
   return (
     <>
       <div>
