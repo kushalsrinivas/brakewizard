@@ -45,7 +45,7 @@ const PictureCardsList = (props) => {
                   height={600}
                 />
 
-                <div className="flex flex-row justify-center space-x-14 bg-slate-500 py-3 my-1 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10">
+                <div className="flex flex-row justify-center space-x-14 bg-slate-500 py-3 my-1 text-white rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10">
                   <button className="btn rounded-sm font-sans  text-lg  px-2 py-1 active:text-red-500 focus:text-red-900">
                     <AiOutlineHeart />{" "}
                   </button>
