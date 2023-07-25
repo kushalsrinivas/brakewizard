@@ -12,7 +12,7 @@ const Home = (props) => {
 
   async function GETIMGS() {
     const cdn =
-      "https://pqwjzqrgrxyzoxawcriq.supabase.co/storage/v1/object/public/images/";
+      "";
     const { data, error } = await supabase.storage.from("images").list();
     if (data !== null) {
       data.map((img, index) => {
@@ -27,11 +27,7 @@ const Home = (props) => {
     GETIMGS();
   }, []);
 
-  useEffect(() => {
-    console.log("====================================");
-    console.log(data);
-    console.log("====================================");
-  }, [data]);
+
 
   return (
     <>
