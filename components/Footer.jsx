@@ -6,8 +6,8 @@ const Footer = () => {
       <a href="https://www.instagram.com/_brakewizard_/" target="__blank">
         <Image
           src={logo}
-          width={100}
-          height={100}
+          width={90}
+          height={90}
           alt="bRaker"
           placeholder="blur"
           className="rounded-full"

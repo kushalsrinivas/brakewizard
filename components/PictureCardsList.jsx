@@ -15,7 +15,7 @@ const PictureCardsList = (props) => {
     saveAs(data[id], "brakewizard");
   };
   const handleShare = (id) => {
-    navigator.clipboard.writeText(data[id]);
+    navigator.clipboard.writeText('https://brakewizard.vercel.app/'); 
   };
   const { data } = props;
 
