@@ -31,7 +31,10 @@ const PictureCardsList = (props) => {
       <Header />
       <div className="flex flex-col p-5 ">
         {data.map((img, index) => {
-          try {
+         if (index == 0) {
+              return;
+            } 
+      try {
             return (
               <div
                 className="main-container my-4 content-center snap-center self-center"
